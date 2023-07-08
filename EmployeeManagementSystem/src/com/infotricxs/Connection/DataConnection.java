@@ -28,15 +28,15 @@ public class DataConnection {
 				int id = Integer.parseInt(employeeData[0]);
 				String name = employeeData[1];
 				int age = Integer.parseInt(employeeData[2]);
-				String address = employeeData[3];
+				String city = employeeData[3];
 				double salary = Double.parseDouble(employeeData[4]);
-				String designation = employeeData[5];
+				String position = employeeData[5];
 
-				Employee employee = new Employee(id, name, age, address, salary, designation);
+				Employee employee = new Employee(id, name, age, city, salary, position);
 				employees.add(employee);
 			}
 		} catch (IOException e) {
-			System.out.println("An error occurred while retrieving employee data from the file.");
+			System.out.println("Error occurred while saving employee data to file....");
 			e.printStackTrace();
 		}
 
@@ -48,16 +48,16 @@ public class DataConnection {
 			for (Employee employee : employees) {
 				writer.println(employeeToFormattedString(employee));
 			}
-			System.out.println("Employee data saved successfully!");
+			System.out.println("Employee saved successfully...!");
 		} catch (IOException e) {
-			System.out.println("An error occurred while saving employee data to the file.");
+			System.out.println("Error occurred while saving employee data to file..");
 			e.printStackTrace();
 		}
 	}
 
 	private String employeeToFormattedString(Employee employee) {
 		return employee.getId() + "," + employee.getName() + "," + employee.getAge() + "," + employee.getCity() + ","
-				+ employee.getSalary() + "," + employee.getDesignation();
+				+ employee.getSalary() + "," + employee.getPosition();
 	}
 
 }

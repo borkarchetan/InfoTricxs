@@ -2,10 +2,10 @@ package com.infotricxs.Exception;
 
 public class EmployeeException extends Exception {
 
-//	public EmployeeException() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
+	/**
+	 * 
+	 */
+//	private static final long serialVersionUID = 1L;
 
 	public EmployeeException(String message) {
 		super(message);

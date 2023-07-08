@@ -6,15 +6,15 @@ public class Employee {
 	private int age;
 	private String city;
 	private double salary;
-	private String designation;
+	private String position;
 
-	public Employee(int id, String name, int age, String city, double salary, String designation) {
+	public Employee(int id, String name, int age, String city, double salary, String position) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.city = city;
 		this.salary = salary;
-		this.designation = designation;
+		this.position = position;
 	}
 
 	// Getters and setters
@@ -22,8 +22,8 @@ public class Employee {
 	// Override toString() method for easy printing of employee details
 	@Override
 	public String toString() {
-		return "Employee ID: " + id + "\nName: " + name + "\nAge: " + age + "\nCity: " + city + "\nSalary: " + salary
-				+ "\nDesignation: " + designation;
+		return "Employee ID:  " + id + "\nName:       " + name + "\nAge:        " + age + "\nCity:       " + city
+				+ "\nSalary:     " + salary + "\nPosition: " + position;
 	}
 
 	public int getId() {
@@ -66,11 +66,11 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public String getDesignation() {
-		return designation;
+	public String getPosition() {
+		return position;
 	}
 
-	public void setDesignation(String designation) {
-		this.designation = designation;
+	public void setPosition(String position) {
+		this.position = position;
 	}
 }

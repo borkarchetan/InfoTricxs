@@ -12,28 +12,38 @@ public class EmployeeImplementation {
 	private DataConnection dataAccess;
 
 	public EmployeeImplementation(String filePath) {
-        dataAccess = new DataConnection(filePath);
-        employees = dataAccess.getAllEmployees();
-    }
+		dataAccess = new DataConnection(filePath);
+		employees = dataAccess.getAllEmployees();
+	}
 
-	public void addEmployee(Employee employee) {
+	public boolean isEmployeeIdExists(int id) {
+		for (Employee employee : employees) {
+			if (employee.getId() == id) {
+				return true; // ID already exists
+			}
+		}
+		return false; // ID does not exist
+	}
+
+	public void addEmployee(Employee employee) throws EmployeeException {
+		if (isEmployeeIdExists(employee.getId())) {
+			throw new EmployeeException("Duplicate ID is not allowed.");
+		}
+
 		employees.add(employee);
 		dataAccess.saveAllEmployees(employees);
 		System.out.println("Employee added successfully!");
-
 	}
 
 	public void viewAllEmployees() throws EmployeeException {
-		if (employees.isEmpty() || employees == null) {
-//            System.out.println("No employees found.");
-			throw new EmployeeException("No employees found.");
+		if (employees == null || employees.isEmpty()) {
+			throw new EmployeeException("No Employees Found...");
 		} else {
 			for (Employee employee : employees) {
+				System.out.println("*****************************************");
 				System.out.println(employee);
-				System.out.println("-----------------------------------------------------------------------------");
-
+				System.out.println("*****************************************");
 			}
-
 		}
 	}
 
@@ -48,7 +58,7 @@ public class EmployeeImplementation {
 		}
 		if (found) {
 			dataAccess.saveAllEmployees(employees);
-			System.out.println("Employee with ID " + id + " deleted successfully!");
+			System.out.println("Employee with ID " + id + " Deleted Successfully...!");
 		} else {
 			throw new EmployeeException("Employee not found with ID: " + id);
 		}
@@ -62,14 +72,14 @@ public class EmployeeImplementation {
 				employee.setAge(updatedEmployee.getAge());
 				employee.setCity(updatedEmployee.getCity());
 				employee.setSalary(updatedEmployee.getSalary());
-				employee.setDesignation(updatedEmployee.getDesignation());
+				employee.setPosition(updatedEmployee.getPosition());
 				found = true;
 				break;
 			}
 		}
 		if (found) {
 			dataAccess.saveAllEmployees(employees);
-			System.out.println("Employee with ID " + id + " updated successfully!");
+			System.out.println("Employee with ID " + id + " updated successfully...!");
 		} else {
 			throw new EmployeeException("Employee not found with ID: " + id);
 		}
