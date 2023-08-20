@@ -1,7 +1,8 @@
 # Employee Management System
 
-![Employee Management System](![EMS-app](https://github.com/borkarchetan/InfoTricxs/assets/103288625/83dfa6f0-0c8c-46e2-91c0-3b7e67608d17)
-)
+![EMS-app](https://github.com/borkarchetan/InfoTricxs/assets/103288625/6312857e-fdf7-45ee-b5e8-7bae349f9219)
+
+![Employee Management System](![EMS-app](https://github.com/borkarchetan/InfoTricxs/assets/103288625/83dfa6f0-0c8c-46e2-91c0-3b7e67608d17))
 
 ## Overview
 
