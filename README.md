@@ -5,7 +5,7 @@
 
 ## Overview
 
-The Employee Management System is a Java-based console application that allows users to manage employee records efficiently. This system provides basic functionalities like adding, viewing, updating, and deleting employee information. It's designed to ensure data integrity and user-friendly interaction.
+The Employee Management System is a Java-based console application that allows users(Admin) to manage employee records efficiently. This system provides basic functionalities like adding, viewing, updating, and deleting employee information. It's designed to ensure data integrity and user-friendly interaction.
 
 ## Features
 
